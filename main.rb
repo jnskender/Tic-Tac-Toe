@@ -11,3 +11,18 @@
 #If winner Display Player(?) Wins!
 #On End game
 #Start new game?
+require "./Board.rb"
+require "./Game.rb"
+
+
+=begin
+puts "Welcome to Tic Tac Toe!"
+puts "Player 1, What's your name? : "
+player_1 = gets.chomp
+
+puts "Player 2, What's your name? : "
+player_2 = gets.chomp
+=end
+
+game = Game.new("John","Emily")
+game.play
