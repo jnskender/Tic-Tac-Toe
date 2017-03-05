@@ -1,5 +1,6 @@
 
 class Game
+
     def initialize(player_one, player_two)
         @player_one = player_one
         @player_two = player_two
@@ -123,3 +124,10 @@ class Game
         end until is_winner?
     end
 end
+
+puts "Player One, enter your first name! : "
+player_1 = gets.chomp
+puts "Player Two, enter your first name! : "
+player_2 = gets.chomp
+game = Game.new(player_1,player_2)
+game.play
