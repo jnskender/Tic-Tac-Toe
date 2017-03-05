@@ -33,16 +33,16 @@ $: 5
 (7)|(8)|(9)  
 Emily, please enter cell where you would like to place your piece  
 $: 7  
- X |(2)|(3)    
----+---+---    
- O | X |(6)      
----+---+---    
- O |(8)|(9)      
-Nick, please enter cell where you would like to place your piece  
-$: 9
  X |(2)|(3)      
 ---+---+---      
  O | X |(6)        
 ---+---+---      
- O |(8)| X   
-Nick Wins!  
+ O |(8)|(9)        
+Nick, please enter cell where you would like to place your piece    
+$: 9  
+ X |(2)|(3)        
+---+---+---        
+ O | X |(6)          
+---+---+---        
+ O |(8)| X     
+Nick Wins!    
