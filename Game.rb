@@ -1,6 +1,5 @@
 
 class Game
-
     def initialize(player_one, player_two)
         @player_one = player_one
         @player_two = player_two
@@ -27,7 +26,7 @@ class Game
             puts 'Cell already played!'
             return false
         end
-            true
+        true
     end
 
     def is_winner?
@@ -39,22 +38,65 @@ class Game
         column_three = @board[2], @board[5], @board[8]
         diagonal_one = @board[0], @board[4], @board[8]
         diagonal_two = @board[2], @board[4], @board[6]
-        possible_winners = [row_one, row_two, row_three, column_one,
-                          column_two, column_three, diagonal_one, diagonal_two]
 
-        puts "column 1 : " + column_one.to_s
-
-        possible_winners.each do |e|
-            if e.all? { |x| x.to_s == ' X ' }
+        if row_one.all? { |x| x == row_one[0] }
+            if row_one[0] == ' X '
                 puts "#{@player_one} Wins!"
-                return true
-            elsif e.all? { |x| x == ' O ' }
-                puts "#{@player_two} Wins!"
-                return true
             else
-                return false
+                puts "#{@player_two} Wins!"
             end
-
+            return true
+        elsif row_two.all? { |x| x == row_two[0] }
+            if row_two[0] == ' X '
+                puts "#{@player_one} Wins!"
+            else
+                puts "#{@player_two} Wins!"
+            end
+            return true
+        elsif row_three.all? { |x| x == row_three[0] }
+            if row_three[0] == ' X '
+                puts "#{@player_one} Wins!"
+            else
+                puts "#{@player_two} Wins!"
+            end
+            return true
+        elsif column_one.all? { |x| x == column_one[0] }
+            if column_one[0] == ' X '
+                puts "#{@player_one} Wins!"
+            else
+                puts "#{@player_two} Wins!"
+            end
+            return true
+        elsif column_two.all? { |x| x == column_two[0] }
+            if column_two[0] == ' X '
+                puts "#{@player_one} Wins!"
+            else
+                puts "#{@player_two} Wins!"
+            end
+            return true
+        elsif column_three.all? { |x| x == column_three[0] }
+            if column_three[0] == ' X '
+                puts "#{@player_one} Wins!"
+            else
+                puts "#{@player_two} Wins!"
+            end
+            return true
+        elsif diagonal_one.all? { |x| x == diagonal_one[0] }
+            if diagonal_one[0] == ' X '
+                puts "#{@player_one} Wins!"
+            else
+                puts "#{@player_two} Wins!"
+            end
+            return true
+        elsif diagonal_two.all? { |x| x == diagonal_two[0] }
+            if diagonal_two[0] == ' X '
+                puts "#{@player_one} Wins!"
+            else
+                puts "#{@player_two} Wins!"
+            end
+            return true
+        else
+            false
         end
     end
 
@@ -77,7 +119,6 @@ class Game
             end until validate_cell(cell.to_i)
 
             place_piece(cell.to_i, piece)
-            display_board
             turn_count += 1
         end until is_winner?
     end
